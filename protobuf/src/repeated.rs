@@ -1,6 +1,7 @@
 #[cfg(feature = "with-serde")]
 use serde;
 
+use std::prelude::v1::*;
 use std::borrow::Borrow;
 use std::cmp::Ordering;
 use std::default::Default;

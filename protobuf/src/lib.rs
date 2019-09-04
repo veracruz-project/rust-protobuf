@@ -5,6 +5,14 @@
 // Because we need compat with Rust 1.26
 #![allow(bare_trait_objects)]
 
+#![cfg_attr(all(feature = "mesalock_sgx",
+                not(target_env = "sgx")), no_std)]
+#![cfg_attr(all(target_env = "sgx", target_vendor = "mesalock"), feature(rustc_private))]
+
+#[cfg(all(feature = "mesalock_sgx", not(target_env = "sgx")))]
+#[macro_use]
+extern crate sgx_tstd as std;
+
 #[cfg(feature = "bytes")]
 extern crate bytes;
 #[cfg(feature = "with-serde")]
@@ -17,14 +25,17 @@ pub use cached_size::CachedSize;
 #[cfg(feature = "bytes")]
 pub use chars::Chars;
 pub use clear::Clear;
-pub use core::parse_from_bytes;
+pub use protocore::parse_from_bytes;
 #[cfg(feature = "bytes")]
-pub use core::parse_from_carllerche_bytes;
-pub use core::parse_from_reader;
-pub use core::parse_length_delimited_from;
-pub use core::parse_length_delimited_from_bytes;
-pub use core::parse_length_delimited_from_reader;
-pub use core::Message;
+pub use protocore::parse_from_carllerche_bytes;
+pub use protocore::parse_from_reader;
+#[allow(deprecated)]
+pub use protocore::parse_length_delimited_from;
+#[allow(deprecated)]
+pub use protocore::parse_length_delimited_from_bytes;
+#[allow(deprecated)]
+pub use protocore::parse_length_delimited_from_reader;
+pub use protocore::Message;
 pub use enums::ProtobufEnum;
 pub use error::ProtobufError;
 pub use error::ProtobufResult;
@@ -48,7 +59,7 @@ pub mod rustproto;
 
 mod clear;
 pub mod compiler_plugin;
-mod core;
+mod protocore;
 mod enums;
 pub mod error;
 pub mod ext;
@@ -63,9 +74,9 @@ pub mod types;
 pub mod well_known_types;
 
 // used by test
-#[cfg(test)]
+//#[cfg(test)]
 #[path = "../../protobuf-test-common/src/hex.rs"]
-mod hex;
+pub mod hex;
 
 // used by rust-grpc
 pub mod descriptorx;
@@ -88,7 +99,7 @@ mod buf_read_iter;
 mod protobuf {
     pub use cached_size::CachedSize;
     pub use clear::Clear;
-    pub use core::*;
+    pub use protocore::*;
     pub use descriptor;
     pub use descriptorx;
     pub use enums::ProtobufEnum;

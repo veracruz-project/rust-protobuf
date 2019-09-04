@@ -1,5 +1,7 @@
-// hex encoder and decoder used by rust-protobuf unittests
+#![doc(hidden)]
+/// hex encoder and decoder used by rust-protobuf unittests
 
+use std::prelude::v1::*;
 use std::char;
 
 fn decode_hex_digit(digit: char) -> u8 {
@@ -11,6 +13,7 @@ fn decode_hex_digit(digit: char) -> u8 {
     }
 }
 
+/// Pub this func for rust-sgx-sdk code sample
 pub fn decode_hex(hex: &str) -> Vec<u8> {
     let mut r: Vec<u8> = Vec::new();
     let mut chars = hex.chars().enumerate();
@@ -42,6 +45,7 @@ fn encode_hex_byte(byte: u8) -> [char; 2] {
     [encode_hex_digit(byte >> 4), encode_hex_digit(byte & 0x0Fu8)]
 }
 
+/// Pub this func for rust-sgx-sdk code sample
 pub fn encode_hex(bytes: &[u8]) -> String {
     let strs: Vec<String> = bytes
         .iter()

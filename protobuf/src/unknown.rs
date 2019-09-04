@@ -1,4 +1,5 @@
 use clear::Clear;
+use std::prelude::v1::*;
 use std::collections::hash_map;
 use std::collections::hash_map::DefaultHasher;
 use std::collections::HashMap;

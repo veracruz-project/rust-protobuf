@@ -19,6 +19,7 @@
 #![allow(unused_results)]
 //! Generated file from `google/protobuf/api.proto`
 
+use std::prelude::v1::*;
 use protobuf::Message as Message_imported_for_functions;
 use protobuf::ProtobufEnum as ProtobufEnum_imported_for_functions;
 

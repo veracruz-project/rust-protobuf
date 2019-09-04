@@ -1,6 +1,7 @@
 //! Lazily initialized data.
 //! Used in generated code.
 
+use std::prelude::v1::*;
 use std::mem;
 use std::sync;
 

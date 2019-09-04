@@ -1,11 +1,12 @@
 #![doc(hidden)]
 
+use std::prelude::v1::*;
 use std::collections::HashMap;
 use std::fmt;
 use std::hash::Hash;
 
-use core::message_down_cast;
-use core::Message;
+use protocore::message_down_cast;
+use protocore::Message;
 use enums::ProtobufEnum;
 use reflect::EnumValueDescriptor;
 use types::*;

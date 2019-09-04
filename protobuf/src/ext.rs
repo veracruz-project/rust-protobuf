@@ -4,9 +4,10 @@
 //!
 //! [exts]: https://developers.google.com/protocol-buffers/docs/proto#extensions
 
+use std::prelude::v1::*;
 use std::marker::PhantomData;
 
-use core::Message;
+use protocore::Message;
 use types::ProtobufType;
 
 /// Optional ext field

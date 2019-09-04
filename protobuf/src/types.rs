@@ -1,5 +1,6 @@
 //! Implementations of `ProtobufType` for all types.
 
+use std::prelude::v1::*;
 use std::marker;
 use std::mem;
 
@@ -8,7 +9,7 @@ use bytes::Bytes;
 #[cfg(feature = "bytes")]
 use chars::Chars;
 
-use core::Message;
+use protocore::Message;
 use enums::ProtobufEnum;
 use error::ProtobufResult;
 use parse_from_bytes;

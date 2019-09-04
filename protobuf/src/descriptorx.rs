@@ -1,6 +1,7 @@
 // Should not be a part of public API
 #![doc(hidden)]
 
+use std::prelude::v1::*;
 use descriptor::DescriptorProto;
 use descriptor::EnumDescriptorProto;
 use descriptor::EnumValueDescriptorProto;

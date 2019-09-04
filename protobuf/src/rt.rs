@@ -1,6 +1,7 @@
 //! Functions used by generated protobuf code.
 //! Should not be used by programs written by hands.
 
+use std::prelude::v1::*;
 use std::collections::HashMap;
 use std::default::Default;
 use std::hash::Hash;
@@ -10,7 +11,7 @@ use bytes::Bytes;
 #[cfg(feature = "bytes")]
 use chars::Chars;
 
-use core::*;
+use protocore::*;
 use enums::ProtobufEnum;
 use error::ProtobufError;
 use error::ProtobufResult;

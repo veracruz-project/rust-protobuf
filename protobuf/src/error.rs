@@ -1,5 +1,6 @@
 //! Protobuf error type
 
+use std::prelude::v1::*;
 use std::error::Error;
 use std::fmt;
 use std::io;
@@ -67,6 +68,7 @@ impl fmt::Display for ProtobufError {
 }
 
 impl Error for ProtobufError {
+    #[allow(deprecated)]
     fn description(&self) -> &str {
         match self {
             // not sure that cause should be included in message

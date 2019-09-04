@@ -1,10 +1,11 @@
 //! Reflection implementation for protobuf types.
 
+use std::prelude::v1::*;
 use std::collections::HashMap;
 use std::default::Default;
 use std::marker;
 
-use core::Message;
+use protocore::Message;
 use descriptor::DescriptorProto;
 use descriptor::EnumDescriptorProto;
 use descriptor::EnumValueDescriptorProto;

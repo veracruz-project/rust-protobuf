@@ -1,6 +1,7 @@
 #[cfg(feature = "with-serde")]
 use serde;
 
+use std::prelude::v1::*;
 use std::default::Default;
 use std::fmt;
 use std::hash::Hash;

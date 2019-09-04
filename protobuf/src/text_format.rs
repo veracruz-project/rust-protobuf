@@ -19,7 +19,8 @@
 //! protobuf implementations, including `protoc` command which can decode
 //! and encode messages using text format.
 
-use core::Message;
+use std::prelude::v1::*;
+use protocore::Message;
 use reflect::ProtobufValueRef;
 use reflect::ReflectFieldRef;
 use std;

@@ -1,6 +1,7 @@
 // TODO: move into separate crate
 #![doc(hidden)]
 
+use std::prelude::v1::*;
 use plugin::*;
 use protobuf::descriptor::FileDescriptorProto;
 use protobuf::parse_from_reader;

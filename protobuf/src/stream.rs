@@ -2,6 +2,7 @@
 
 //! `CodedInputStream` and `CodedOutputStream` implementations
 
+use std::prelude::v1::*;
 use std::io;
 use std::io::Write;
 use std::io::{BufRead, Read};
@@ -14,7 +15,7 @@ use bytes::Bytes;
 use chars::Chars;
 
 use buf_read_iter::BufReadIter;
-use core::Message;
+use protocore::Message;
 use enums::ProtobufEnum;
 use error::ProtobufError;
 use error::ProtobufResult;

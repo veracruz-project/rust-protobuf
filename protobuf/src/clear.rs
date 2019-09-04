@@ -1,6 +1,8 @@
 #[cfg(feature = "bytes")]
 use bytes::Bytes;
 
+use std::prelude::v1::*;
+
 /// anything that can be cleared
 pub trait Clear {
     /// Clear this make, make it equivalent to newly created object.

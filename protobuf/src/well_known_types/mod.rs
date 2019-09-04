@@ -23,4 +23,5 @@ pub use self::source_context::*;
 pub use self::struct_pb::*;
 pub use self::timestamp::*;
 pub use self::type_pb::*;
+pub use self::type_pb::Option;
 pub use self::wrappers::*;

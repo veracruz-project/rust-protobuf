@@ -1,3 +1,5 @@
+use std::prelude::v1::*;
+
 static RUST_KEYWORDS: &'static [&'static str] = &[
     "as", "break", "crate", "else", "enum", "extern", "false", "fn", "for", "if", "impl", "in",
     "let", "loop", "match", "mod", "move", "mut", "pub", "ref", "return", "static", "self", "Self",
